@@ -36,7 +36,7 @@ Use getFinals to do the following:
 hint - you should be looking at the stage key inside of the objects
 */
 
-function getFinals(arrName) {
+const getFinals = arrName => {
     const finalTeams = [];
     for (let i = 0; i < arrName.length; i++) {
         if (arrName[i].Stage === "Final");
@@ -85,8 +85,8 @@ Use the higher-order function getWinnersByYear to do the following:
 hint: the strings returned need to exactly match the string in step 4.
  */
 
-function getWinnersByYear() {
-    
+function getWinnersByYear(arr, cb3, cb4) {
+    const result = [`In ${Year[index]}, ${Winners[index]} won the world cup!`]
 }
 
 
