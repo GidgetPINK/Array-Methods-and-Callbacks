@@ -10,7 +10,7 @@ const homeTeamName = fifaData.filter(function(item){
     return item.Year === 2014 && item.Stage === "Final";
 });
 
-console.log(homeTeamName);
+//console.log(homeTeamName);
 
 //(b) Away Team name for 2014 world cup final
 const awayTeam = fifaData.filter(function(item){
@@ -18,12 +18,22 @@ const awayTeam = fifaData.filter(function(item){
         return item["Away Team Name"];
     }
 });
-console.log(awayTeam);
-
+//console.log(awayTeamName);
 
 //(c) Home Team goals for 2014 world cup final
 
+const homeTeamGoals = fifaData.filter(function(item){
+    return item.Year === 2014 && item.Stage === "Final";
+});
+
+//console.log(homeTeamGoals);
+
 //(d) Away Team goals for 2014 world cup final
+const awayTeamGoals = fifaData.filter(function(item){
+    return item.Year === 2014 && item.Stage === "Final";
+});
+
+//console.log(awayTeamGoals);
 
 //(e) Winner of 2014 world cup final */
 
@@ -88,15 +98,11 @@ hint: the strings returned need to exactly match the string in step 4.
  */
 
 function getWinnersByYear(arr, cb3, cb4) {
-    const years = getYears(arr);
-    const winner = getWinners(arr);
-    const stringArr = [];
-    for(let i=0; i < getWinners.length; i++){
-       stringArr.push(`In ${years[i]}, ${winner[i]} won the world cup!}`)
-    }
-    return stringArr;
+    const years = getYears(arr, getFinals);
+    const winner = getWinners(arr, getFinals);
+    return years.map((i, index) =>`In ${i}, ${winner[index]} won the world cup!`);
 }
-getWinnersByYear(fifaData, getYears, getWinners);
+
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Use the higher order function getAverageGoals to do the following: 
